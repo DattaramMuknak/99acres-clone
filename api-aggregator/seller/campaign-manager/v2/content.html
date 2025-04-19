@@ -1,0 +1,215 @@
+{"data":"
+<div style=\ "padding: 20px 0px\">\r\n
+    <script>
+        \
+        r\ n\ r\ n
+        var calculateDateXDaysFromToday = days => {\
+            r\ n
+            var date = new Date();\
+            r\ n date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);\
+            r\ n
+            return date.toGMTString();\
+            r\ n
+        };\
+        r\ n
+        var setCookieDataNew = (c_name, value, expires) => {\
+            r\ n
+            var days = calculateDateXDaysFromToday(expires);\
+            r\ n document.cookie = `${c_name}=${value}; ${\r\n        expires ? `expires=${days};` : ''\r\n    }path=/`;\
+            r\ n
+        };\
+        r\ n
+        var closeBannerInline = (e) => {\
+                r\ n e.stopPropagation();\
+                r\ n e.preventDefault();\
+                r\ n e.currentTarget.parentElement.style.display = 'none'; // it will hide \r\n        let UTM = \"MSiteHomePageinline2\";\r\n        setCookieDataNew('BannerExpire', encodeURIComponent(true), 2);\r\n        ga('send', {\r\n                'hitType': 'event',\r\n                'eventCategory': 'MHTML5_NEW_APP_BANNER_INLINE_CLOSE',\r\n                'eventAction': '_CLOSE',\r\n                'eventValue': `MHTML5_${UTM}`\r\n        });\r\n        \r\n    };\r\n
+    </script>\r\n
+    <script>
+        \
+        r\ n\ r\ n
+        var ANDROID_DOWNLOAD_LINK = 'https://play.google.com/store/apps/details?id=com.nnacres.app&referrer=utm_source=<REFERRER>&utm_medium=BotInstall';\
+        r\ n
+        var IOS_DEEP_LINK = 'https://apps.apple.com/app/apple-store/id781765588?pt=1484423&ct=<REFERRER>&mt=8';\
+        r\ n
+        var checkForAndroidUserAgent = () => {\
+            r\ n
+            let userAgent = window.navigator.userAgent;\
+            r\ n
+            return userAgent.includes('Android');\
+            r\ n
+        }\
+        r\ n
+        var downloadAppInline = (e) => {\
+                r\ n e.stopPropagation();\
+                r\ n e.preventDefault();\
+                r\ n
+                let UTM = \"MSiteHomePageinline2\";\r\n        let isAndroidPlatform = checkForAndroidUserAgent();\r\n        location.href = window.oneLinkURLInline ? window.oneLinkURLInline : window.isAndroidPlatform ? ANDROID_DOWNLOAD_LINK.replace('<REFERRER>', UTM) : IOS_DEEP_LINK.replace('<REFERRER>', UTM);\r\n        ga('send', {\r\n                'hitType': 'event',\r\n                'eventCategory': 'MHTML5_NEW_APP_BANNER_INLINE_CLICK',\r\n                'eventAction': '_CLICK',\r\n                'eventValue': `MHTML5_${UTM}`\r\n        });\r\n    }\r\n
+    </script>\r\n\r\n
+    <style>
+        \r\n\r\n .inlineBannerWrap {
+            \r\n margin: 0px 20px;
+            \r\n border-radius: 16px;
+            \r\n padding: 7px 15px 26px 16px;
+            \r\n background-position-x: right;
+            \r\n background-position-y: bottom;
+            \r\n background-repeat: no-repeat;
+            \r\n
+        }
+
+        \r\n\r\n .bannerImg1 {
+            \r\n background-image: url('https://static.99acres.com/universalapp/img/Rent_a_home.png');
+            \r\n background-size: 105px 154px;
+            \r\n
+        }
+
+        \r\n\r\n .bannerImg2 {
+            \r\n background-image: url('https://static.99acres.com/universalapp/img/Receive_updates.png');
+            \r\n background-size: 95px 150px;
+            \r\n
+        }
+
+        \r\n\r\n .bannerImg3 {
+            \r\n background-image: url('https://static.99acres.com/universalapp/img/Download_our_app_to.png');
+            \r\n background-size: 120px 134px;
+            \r\n
+        }
+
+        \r\n\r\n .bannerImg4 {
+            \r\n background-image: url('https://static.99acres.com/universalapp/img/donwload_our_app_and.png');
+            \r\n background-size: 119px 138px;
+            \r\n
+        }
+
+        \r\n\r\n .bannerImg5 {
+            \r\n background-image: url('https://static.99acres.com/universalapp/img/Stay_updated.png');
+            \r\n background-size: 113px 132px;
+            \r\n
+        }
+
+        \r\n\r\n .bannerImg6 {
+            \r\n background-image: url('https://static.99acres.com/universalapp/img/receive_personlised_updates.png');
+            \r\n background-size: 89px 122px;
+            \r\n
+        }
+
+        \r\n .infoLineText {
+            \r\n margin-top: 8px;
+            \r\n max-width: 204px;
+            \r\n margin-bottom: 20px;
+            \r\n
+        }
+
+        \r\n\r\n .inlineAppBanner__lightOrangeBg {
+            \r\n background-color: #FFFBF3;
+            \r\n
+        }
+
+        \r\n\r\n .lightBlueBg {
+            \r\n background-color: #F0F9FF;
+            \r\n
+        }
+
+        \r\n\r\n .inlineAppBanner__bannercross {
+            \r\n float: right;
+            \r\n line-height: 0;
+            \r\n
+        }
+
+        \r\n\r\n .inlineAppBanner__bannercross img {
+            \r\n width: 32px;
+            \r\n
+        }
+
+        \r\n\r\n .inlineAppBanner__bannerHead {
+            \r\n padding-top: 20px;
+            \r\n padding-right: 12px;
+            \r\n
+        }
+
+        \r\n\r\n .inlineBannerlistText {
+            \r\n margin-top: 12px;
+            \r\n max-width: 204px;
+            \r\n margin-bottom: 20px;
+            \r\n\r\n
+        }
+
+        \r\n\r\n .inlineBannerlistText ul {
+            \r\n padding-left: 20px;
+            \r\n
+        }
+
+        \r\n\r\n .inlineBannerlistText ul li {
+            \r\n margin-bottom: 8px;
+            \r\n padding-left: 5px;
+            \r\n position: relative;
+            \r\n
+        }
+
+        \r\n\r\n .inlineBannerlistText ul li::after {
+            \r\n content: '';
+            \r\n position: absolute;
+            \r\n background-size: contain;
+            \r\n background-image: url(https://static.99acres.com/universalapp/img/Commonsprite_v20.png);
+            \r\n left: -18px;
+            \r\n width: 12px;
+            \r\n height: 12px;
+            \r\n top: 1px;
+            \r\n background-position: -96px -16px;
+            \r\n background-size: 272px 133px;
+            \r\n
+        }
+
+        \r\n\r\n .title_bold {
+            \r\n color: #041533;
+            \r\n
+        }
+
+        \r\n .buttons__primaryRegular {
+            \r\n box-shadow: 0 1px 4px 0 rgba(0, 106, 194, .2);
+            \r\n background: #0078db;
+            \r\n border-radius: 4px;
+            \r\n -webkit-border-radius: 4px;
+            \r\n -moz-border-radius: 4px;
+            \r\n outline: 0;
+            \r\n margin: 0;
+            \r\n vertical-align: middle;
+            \r\n cursor: pointer;
+            \r\n border: 0;
+            \r\n padding: 8px 16px;
+            \r\n font-size: 14px;
+            \r\n line-height: 20px;
+            \r\n font-weight: 700;
+            \r\n color: #fff;
+            \r\n display: inline-block;
+            \r\n text-align: center;
+            \r\n vertical-align: middle\r\n
+        }
+
+        \r\n\r\n.buttons__primaryRegular:active {
+            \r\n background: #005ca8\r\n
+        }
+
+        \r\n\r\n.buttons__primaryRegular:hover {
+            \r\n background: #006ac2\r\n
+        }
+
+        \r\n.caption_strong_medium {
+            \r\n font-size: 12px;
+            \r\n line-height: 16px;
+            \r\n font-weight: 400;
+            \r\n color: #42526e;
+            \r\n display: block;
+            \r\n text-align: left\r\n
+        }
+
+        \r\n.title_bold {
+            \r\n font-size: 20px;
+            \r\n line-height: 28px;
+            \r\n font-weight: 700;
+            \r\n display: block;
+            \r\n text-align: left;
+            \r\n
+        }
+
+        \r\n
+    </style>\r\n\r\n<a href=\ "#\" onclick=\ "downloadAppInline(event)\" class=\ "pageComponent\" data-label=\ "INLINE_BANNER\">\r\n    <div class=\"pageComponent inlineBannerWrap inlineAppBanner__lightOrangeBg bannerImg3\" data-label=\"INLINE_BANNER\" topmost=\"true\">\r\n        <div class=\"inlineAppBanner__bannercross\" data-close=\"close\" onclick=\"closeBannerInline(event)\">\r\n            <i class=\"iconS_Common_20 icon_close\"></i>\r\n        </div>\r\n        <div class=\"title_bold inlineAppBanner__bannerHead\">Download our app and search 1.5x faster</div>\r\n        <div class=\"caption_strong_medium inlineBannerlistText\">\r\n            <ul>\r\n                <li>Get best deals & offers</li>\r\n                <li>Receive personalised updates</li>\r\n            </ul>\r\n        </div>\r\n        <button class=\"buttons__primaryRegular\">Download Now</button>\r\n    </div>\r\n</a>\r\n</div>","jsonData":null,"status":"SUCCESS","errors":[]}
